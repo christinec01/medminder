@@ -1,4 +1,4 @@
-class MedReminders < ActiveRecord::Base
+class MedReminder < ActiveRecord::Base
   # Remember to create a migration!
   belongs_to :user
 

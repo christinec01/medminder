@@ -1,4 +1,4 @@
-class Users < ActiveRecord::Base
+class User < ActiveRecord::Base
   # Remember to create a migration!
   has_many :med_reminders
 
