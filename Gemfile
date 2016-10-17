@@ -17,6 +17,8 @@ gem 'rake'
 
 gem 'dotenv'
 
+gem 'whenever'
+
 gem 'shotgun'
 
 group :test do
