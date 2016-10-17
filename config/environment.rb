@@ -11,6 +11,8 @@ require 'rubygems'
 require 'uri'
 require 'pathname'
 
+require_relative '../lib/notifier'
+
 require 'pg'
 require 'active_record'
 require 'logger'

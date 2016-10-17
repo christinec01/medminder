@@ -1,4 +1,5 @@
 get '/' do
+  p params
  erb :index
 end
 
@@ -6,10 +7,23 @@ get '/user/new' do
   erb :'user/new'
 end
 
-post '/user/new' do
-  # here is where i'll create a new User
-  # User.create(name: params[:name], etc..)
-  #then a redirect to '/'
+post '/user' do
+
+  user_params = params[:user]
+  # TODO have real hashed passwords
+  @user = User.new(name: user_params[:name], email: user_params[:email], phone_number: user_params[:phone_number], hashed_password: '')
+  p @user
+  if @user.save
+    session[:user_id] = @user.id
+    #
+    # authy = Authy::API.register_user(
+    # email: @user.email,
+    # cellphone: @user.phone_number,
+    #
+    # )
+    # @user.update(authy_id: authy.id)
+  redirect '/'
+end
 end
 
 get '/user/:id/meds' do
