@@ -1,3 +1,3 @@
 post '/send_sms_text' do
-  Notifier::send_sms_notification("(425) 761-2220", "I'm here!" )
+  Notifier::send_sms_notification("(415) 630-0720", "Hi my friend!" )
 end

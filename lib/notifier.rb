@@ -2,6 +2,9 @@ require 'dotenv'
 require 'twilio-ruby'
 Dotenv.load
 
+# put this in the model folder
+
+
 module Notifier
   def self.send_sms_notification(phone_number, message)
     # alert_message = "It's time to take your meds!"
