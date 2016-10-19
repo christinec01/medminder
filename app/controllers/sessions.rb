@@ -6,7 +6,8 @@ post '/sessions' do
       session[:user_id] = user.id
       p "* in if" *10
       redirect '/user/:id/med'
-
+    end
+    
 get '/sessions/new' do
   redirect 'med_minder/show'
 end
