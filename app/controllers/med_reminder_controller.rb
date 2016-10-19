@@ -5,6 +5,7 @@ end
 
 get '/user/:id/med' do
 
+end
 
 get '/med_minder' do
   erb  :'user/main'
