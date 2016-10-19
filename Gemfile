@@ -31,4 +31,5 @@ end
 
 group :test, :development do
   gem 'faker'
+  gem 'pry-byebug'
 end

@@ -5,19 +5,18 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="app.js"></script>
-  <script src="/js/form.js"></script>
 
   <title></title>
 </head>
 <body>
 
-      <!-- <% if logged_in? %> -->
+      <% if logged_in? %>
         <a href="/sessions/delete">Logout</a>
-      <!-- <% else %>
-      <%= @errors %> -->
-      
-      <!-- <% end %> -->
+  <%end%>
 
+
+
+<h1>Yo</h1>
 
   <%= yield %>
 

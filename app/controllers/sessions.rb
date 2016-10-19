@@ -1,14 +1,12 @@
-get '/sessions/new' do
-  redirect '/'
-end
-
 post '/sessions' do
-  user = User.find_by(email: params[:email])
-
-    if user && User.authenticate(user.email, params[:password])
+  user = User.find_by(email: params[:user][:email])
+  # binding.pry
+    if user && User.authenticate(user.email, params[:user][:password])
       session[:user_id] = user.id
-      redirect '/'
+      p "* in if" *10
+      redirect '/user/:id/med'
     else
+      p "* in else" *10
       @errors = "Email and Password not found. Please try again."
       erb :index
     end
