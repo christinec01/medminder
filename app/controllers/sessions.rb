@@ -7,7 +7,8 @@ post '/sessions' do
       p "* in if" *10
       redirect '/user/:id/med'
     end
-    
+  end
+
 get '/sessions/new' do
   redirect 'med_minder/show'
 end
