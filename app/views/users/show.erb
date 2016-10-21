@@ -14,7 +14,7 @@
         <p> <%=medminder.time %>  </p>
       </div>
       <div class="card-action">
-        <a class="waves-effect waves-light btn send-text">Medminder!</a>
+        <a class="waves-effect waves-light btn send-text" name="<%=medminder.name %>">Medminder!</a>
         <form id="delete-medminder" action="/users/<%=@user.id%>/medminders/<%="#{medminder.id}"%>" method="POST">
           <input type="hidden" name="_method" value="delete">
           <button class="delete_button" type="submit">Delete</button>
