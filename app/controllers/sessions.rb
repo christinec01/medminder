@@ -1,6 +1,6 @@
 get '/sessions/login' do
   p "hi"*30
- erb :'sessions/login', layout:false
+ erb :'sessions/login'
 end
 
 post '/sessions/login' do

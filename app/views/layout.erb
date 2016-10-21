@@ -19,17 +19,29 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
 
+
+
+      <div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
       <% if logged_in? %>
-        <a href="/sessions/delete">Logout</a>
-        <% else %>
-        <%= @errors %>
-        <button class="login"><a href="/sessions/login">Login</button></a>
-        <text>/</text>
-        <a href="/users/new"> Register </a>
-  <%end%>
-<% if logged_in? %>
-    <a href="/medminders/new">Add a new Medminder</a>
-<%end%>
+      <a href="/sessions/delete">Logout</a>
+      <% else %>
+      <%= @errors %>
+      <a href="/sessions/login">Login</a>
+      <text>/</text>
+      <a href="/users/new"> Register </a>
+      <%end%>
+      <% if logged_in? %>
+      <a href="/medminders/new">Add a new Medminder</a>
+
+      <ul class="right hide-on-med-and-down">
+        <%end%>
+      </ul>
+    </div>
+  </nav>
+</div>
+
   <%= yield %>
 
 </body>
