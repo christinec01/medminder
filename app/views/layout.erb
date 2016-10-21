@@ -4,17 +4,26 @@
 
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+
+
   <script src="../app.js"></script>
 
   <title>Medminder</title>
 </head>
 <body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
 
       <% if logged_in? %>
         <a href="/sessions/delete">Logout</a>
         <% else %>
         <%= @errors %>
-        <a href="/sessions/login">Login</a>
+        <button class="login"><a href="/sessions/login">Login</button></a>
         <text>/</text>
         <a href="/users/new"> Register </a>
   <%end%>

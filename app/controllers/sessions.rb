@@ -1,5 +1,10 @@
 get '/sessions/login' do
- erb :'sessions/login'
+  p "hi"*30
+ erb :'sessions/login', layout:false
+end
+
+post '/sessions/login' do
+  redirect '/sessions/login'
 end
 
 post '/sessions' do
@@ -8,7 +13,7 @@ post '/sessions' do
     if user && User.authenticate(user.email, params[:user][:password])
       session[:user_id] = user.id
       p "* in if" *10
-      redirect '/'
+      redirect "/users/#{user.id}"
     else
       @errors = "Woops! we couldn't find you, try again!"
       erb :index

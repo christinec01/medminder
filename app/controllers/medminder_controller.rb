@@ -4,7 +4,7 @@ get '/medminders' do
 end
 
 post '/send_sms_text' do
-  Notifier::send_sms_notification("(425) 761-2220", "Hi my friend!" )
+  Notifier::send_sms_notification("(425) 761-2220", params[:message] )
 end
 
 post '/medminders' do

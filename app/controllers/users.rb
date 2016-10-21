@@ -14,15 +14,14 @@ post '/users' do
   user = User.new(name: user_params[:name],
                   email: user_params[:email],
                   phone_number: user_params[:phone_number],
-                  password_digest: user_params[:password])
+                  password: user_params[:password])
 
-    if user.save
-
-      session[:user_id] = user.id
-    else
-      @errors
-    end
-      redirect "/users/#{user.id}"
+  if user.save
+    session[:user_id] = user.id
+  else
+    @errors
+  end
+  redirect "/users/#{user.id}"
 end
 
 get '/users/:id' do
