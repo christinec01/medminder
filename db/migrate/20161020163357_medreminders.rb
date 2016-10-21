@@ -3,7 +3,7 @@ class Medreminders < ActiveRecord::Migration
   create_table :med_reminders do |t|
       t.string :name
       t.integer :phone_number
-      t.datetime :time
+      t.string :time
 
     end
   end

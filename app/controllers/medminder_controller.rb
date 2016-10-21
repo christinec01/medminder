@@ -10,7 +10,7 @@ end
 post '/medminders' do
   @user = User.find(session[:user_id])
   p params
-  @medminder = @user.med_reminders.create(name: params[:medminder][:name], phone_number: params[:medminder][:phone_number], time: params[:medminder][:time])
+  @medminder = @user.med_reminders.create!(name: params[:medminder][:name], phone_number: params[:medminder][:phone_number], time: params[:medminder][:time])
   # if !@medminder.empty?
     redirect "/users/#{@user.id}"
   # else
