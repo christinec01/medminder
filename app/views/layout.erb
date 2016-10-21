@@ -18,30 +18,25 @@
 <body>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
-
-
 <div class="containers">
-      <div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper">
-      <div class="input-field">
-      <% if logged_in? %>
-      <a href="/sessions/delete">Logout</a>
-      <% else %>
-      <%= @errors %>
-      <a href="/sessions/login">Login</a>
-      <text>/</text>
-      <a href="/users/new"> Register </a>
-      <%end%>
-
-
-      <ul class="right hide-on-med-and-down">
-
-      </ul>
-    </div>
-  </nav>
-</div>
-</div>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <div class="input-field">
+        <% if logged_in? %>
+        <a href="/sessions/delete">Logout</a>
+        <% else %>
+        <%= @errors %>
+        <a href="/sessions/login">Login</a>
+        <text>/</text>
+        <a href="/users/new"> Register </a>
+        <%end%>
+        <ul class="right hide-on-med-and-down">
+        </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
 </div>
   <%= yield %>
 
