@@ -3,6 +3,7 @@ $(document).ready(function(){
   $(".login-form").hide();
   eventListener();
   userLoginForm();
+  sendText();
 });
 
 var eventListener = function(){
@@ -17,5 +18,12 @@ var userLoginForm = function() {
   $(".login").on("click", function(event){
     // event.preventDefault();
     $(".login-form").show();
+  })
+}
+
+var sendText = function() {
+  $(document).on("click", ".send-text", function(event){
+    $.post("/send_sms_text")
+
   })
 }

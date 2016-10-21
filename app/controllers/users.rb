@@ -17,7 +17,7 @@ post '/users' do
                   password_digest: user_params[:password])
 
     if user.save
-    p "*"*20
+
       session[:user_id] = user.id
     else
       @errors
@@ -27,8 +27,11 @@ end
 
 get '/users/:id' do
   #this is where I'll show a user and identify it by User.find(params[:id])
-  @medminders = MedRemindereminder.all
-  @user = User.find(params[:id])
+  @user = User.find(session[:user_id])
+  @medminders = MedReminder.where(user_id: @user.id)
+  p "*" *40
+  p @medminders
+  p "*" *40
   erb :'users/show'
 end
 

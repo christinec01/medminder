@@ -1,8 +1,6 @@
 
 <h2>Current Medminders:</h2>
-<form align="center" action="/medreminders" method="get">
+<form align="center" action="/medreminder" method="get">
   <p> <label for="name">Name of med:</label></p>
   <input type="text" name="medreminder[name]" value="<%= @user.medminders.name %>"/>
 </form>
-
-
