@@ -1,0 +1,14 @@
+<h1>Welcome back, <%= @user.name %> </h1>
+<br>
+  <%=@medminder.name %>
+  <form action="/users/<%=@user.id%>/medminders/:<%="#{@medminder.id}"%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button class="delete_button" type="submit">Delete</button>
+  </form>
+  <h2>Current Medminders:</h2>
+  <form align="center" action="/medminders" method="get">
+    <p> <label for="name">Name of med:</label></p>
+    <input type="text" name="medminder[name]" value="<%= @user.med_reminders.name %>"/>
+  </form>
+
+

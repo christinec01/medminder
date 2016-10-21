@@ -6,18 +6,21 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="app.js"></script>
 
-  <title></title>
+  <title>Medminder</title>
 </head>
 <body>
 
       <% if logged_in? %>
         <a href="/sessions/delete">Logout</a>
+        <% else %>
+        <%= @errors %>
+        <a href="/sessions/login">Login</a>
+        <text>/</text>
+        <a href="/users/new"> Register </a>
   <%end%>
-
-
-
-<h1>Yo</h1>
-
+<% if logged_in? %>
+    <a href="/medminders/new">Add a new Medminder</a>
+<%end%>
   <%= yield %>
 
 </body>

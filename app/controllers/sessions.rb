@@ -1,3 +1,6 @@
+get '/sessions/login' do
+ erb :'sessions/login'
+end
 
 post '/sessions' do
   user = User.find_by(email: params[:user][:email])
@@ -5,29 +8,14 @@ post '/sessions' do
     if user && User.authenticate(user.email, params[:user][:password])
       session[:user_id] = user.id
       p "* in if" *10
-      redirect '/user/:id/med'
-    end
-  end
-
-get '/sessions/new' do
-  redirect 'med_minder/show'
-end
-
-post '/med_minder' do
-  user = User.find_by(email: params[:email])
-
-    if user && User.authenticate(user.email, params[:password])
-      session[:user_id] = user.id
-      redirect 'med_minder/show'
-
+      redirect '/'
     else
-      p "* in else" *10
-      @errors = "Email and Password not found. Please try again."
+      @errors = "Woops! we couldn't find you, try again!"
       erb :index
     end
   end
 
 get '/sessions/delete' do
-    session.clear
+    session[:user_id] = nil
     redirect '/'
 end
