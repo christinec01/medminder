@@ -20,10 +20,11 @@
       <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
 
 
-
+<div class="containers">
       <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper">
+      <div class="input-field">
       <% if logged_in? %>
       <a href="/sessions/delete">Logout</a>
       <% else %>
@@ -32,16 +33,16 @@
       <text>/</text>
       <a href="/users/new"> Register </a>
       <%end%>
-      <% if logged_in? %>
-      <a href="/medminders/new">Add a new Medminder</a>
+
 
       <ul class="right hide-on-med-and-down">
-        <%end%>
+
       </ul>
     </div>
   </nav>
 </div>
-
+</div>
+</div>
   <%= yield %>
 
 </body>

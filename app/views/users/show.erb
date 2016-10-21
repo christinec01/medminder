@@ -1,11 +1,22 @@
 <h1>Welcome back, <%= @user.name %> </h1>
 <br>
 <h2>Current Medminders:</h2>
+
  <%@medminders.each do |medminder|%>
   <%=medminder.name %>
+  <%=medminder.time %>
+
   <form action="/users/<%=@user.id%>/medminders/<%="#{medminder.id}"%>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button class="delete_button" type="submit">Delete</button>
+    <input type="hidden" name="_method" value="delete">
+    <button class="delete_button" type="submit">Delete</button>
   </form>
+  <br>
   <button class="send-text" name="<%= medminder.name %>">Medminder!</button>
+
+
+  <%end%>
+
+
+  <% if logged_in? %>
+    <a href="/medminders/new">Add a new Medminder</a>
   <%end%>
